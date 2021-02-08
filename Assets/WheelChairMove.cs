@@ -10,6 +10,9 @@ public class WheelChairMove : MonoBehaviour
     public Rigidbody rb;
     public WheelChairWheel rightWheel;
     public WheelChairWheel leftWheel;
+    public GameObject ForwardL;
+    public GameObject BackwardL;
+
 
 
 
