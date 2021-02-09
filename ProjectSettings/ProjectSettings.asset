@@ -310,11 +310,7 @@ PlayerSettings:
   - m_BuildTarget: iOSSupport
     m_APIs: 10000000
     m_Automatic: 0
-  m_BuildTargetVRSettings:
-  - m_BuildTarget: Standalone
-    m_Enabled: 1
-    m_Devices:
-    - OpenVR
+  m_BuildTargetVRSettings: []
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
@@ -664,14 +660,6 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
-<<<<<<< HEAD
-    Build: 0
-    Collab: 1
-    ErrorHub: 0
-    Hub: 0
-=======
-    Collab: 1
->>>>>>> 9917718a1bdd6f0edbc36ef35d5761ab524c29b1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -685,17 +673,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-<<<<<<< HEAD
-  cloudProjectId: 55bc6204-f0ad-4865-9310-c034a36c6806
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: Empathy_Project
-  organizationId: chambers_1
-=======
-  cloudProjectId: 6ab922a8-90db-4915-861d-f6cef5551bfd
-  framebufferDepthMemorylessMode: 0
-  projectName: Empathy_Project
-  organizationId: lemlur-kerman-fca68327-452f-4102-a52b-11297995e0a9
->>>>>>> 9917718a1bdd6f0edbc36ef35d5761ab524c29b1
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 1
   disableOldInputManagerSupport: 0
