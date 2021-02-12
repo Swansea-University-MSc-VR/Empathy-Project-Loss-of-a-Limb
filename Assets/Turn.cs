@@ -27,7 +27,7 @@ public class Turn : MonoBehaviour
     void FixedUpdate()
     {
         rb.AddTorque(transform.up * torque * LinkHandVel);
-        rb.AddForce(transform.forward * thrust * LinkHandVel );
+        rb.AddForce(transform.forward * thrust * LinkHandVel, ForceMode.Acceleration );
         LinkHandVel = HandTrack.GetComponent<velocityTrack>().velocityClamp;
 
 
