@@ -5,49 +5,46 @@ using UnityEngine.Video;
 
 public class SceneController : MonoBehaviour
 {
-    public SurveyController surveyFinished;
+    public SurveyController surveyFinished;                                                 //reference to surveyController script
 
-    public GameObject wheelChair, environment, playerModel, videoSphere, surveyCanvas;            //creates refeences for gameobjects
-    public VideoPlayer VRVideo1, VRVideo2;                                                     //creates references for video player
-    public bool survey1Complete, survey2Complete;
+    public GameObject wheelChair, environment, playerModel, videoSphere, surveyCanvas;      //creates refeences for gameobjects
+    public VideoPlayer VRVideo1, VRVideo2;                                                  //creates references for video player
+    public bool survey1Complete, survey2Complete;                                           //bools to control
 
-    // Start is called before the first frame update
     void Start()
     {
-        VRVideo1.Stop();
-        VRVideo2.Stop();
-        videoSphere.SetActive(false);
-        wheelChair.SetActive(false);                     //ensures gameobject is inactive
-        environment.SetActive(false);                    //ensures gameobject is inactive
-        playerModel.SetActive(false);                    //ensures gameobject is inactive
-        surveyCanvas.SetActive(true);
+        VRVideo1.Stop();                                //ensures video not playing
+        VRVideo2.Stop();                                //ensures video is not playing
+        videoSphere.SetActive(false);                   //ensures game object inactive
+        wheelChair.SetActive(false);                    //ensures gameobject is inactive
+        environment.SetActive(false);                   //ensures gameobject is inactive
+        playerModel.SetActive(false);                   //ensures gameobject is inactive
+        surveyCanvas.SetActive(true);                   //sets this game object to active
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (surveyFinished.surveyComplete)
+        if (surveyFinished.surveyComplete)                              //if surveyComplete bool from SurveySontroller script is true.....
         {
-            videoSphere.SetActive(true);
-            surveyCanvas.SetActive(false);
-            VRVideo1.Play();
-            survey1Complete = true;
+            LaunchVideo1();                                             //call this function
         }
 
-        if (VRVideo1.isPlaying != true && survey1Complete == true)                  //if the video has finished playing....
+        if (VRVideo1.isPlaying != true && survey1Complete == true)      //if the video has finished playing and survey is completed....
         {
-            LaunchEnvironment();                        //call funstion
+            LaunchEnvironment();                                        //call funstion
         }
     }
 
     void LaunchVideo1()
     {
-        VRVideo1.Play();
-        wheelChair.SetActive(false);                     //ensures gameobject is inactive
-        environment.SetActive(false);                    //ensures gameobject is inactive
-        playerModel.SetActive(false);                    //ensures gameobject is inactive
-        surveyCanvas.SetActive(false);
-
+        videoSphere.SetActive(true);                    //set gameobject to active
+        VRVideo1.Play();                                //play video file
+        wheelChair.SetActive(false);                    //ensures gameobject is inactive
+        environment.SetActive(false);                   //ensures gameobject is inactive
+        playerModel.SetActive(false);                   //ensures gameobject is inactive
+        surveyCanvas.SetActive(false);                  //turn off survey canvas
+        survey1Complete = true;                         //set bool to true
     }
 
     void LaunchEnvironment()

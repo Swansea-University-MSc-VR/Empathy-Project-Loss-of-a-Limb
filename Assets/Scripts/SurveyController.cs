@@ -6,72 +6,73 @@ using UnityEngine.UI;
 
 public class SurveyController : MonoBehaviour
 {
-    public Button button1, button2, button3, button4;
-    public int Q1Ans, Q2Ans, Q3Ans, Q4Ans, Q5Ans;
-    public Text surveyText;
-    public bool btn1Press, btn2Press, btn3Press, btn4Press, surveyComplete, question1, question2, question3, question4, question5;
+    public Button button1, button2, button3, button4;                   //references to canvas buttons
+    public int Q1Ans, Q2Ans, Q3Ans, Q4Ans, Q5Ans;                       //ints to store survey values
+    public Text surveyText;                                             //reference to canvas text
+    private bool btn1Press, btn2Press, btn3Press, btn4Press, question1, question2, question3, question4, question5;     //bools to control button presses and question timing
+    public bool surveyComplete;                                         //bool to mark survey complete
 
     // Start is called before the first frame update
     void Start()
     {
-        question1 = true;
+        question1 = true;                       //sets bool to true
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (question1)
+        if (question1)              //if true....
         {
-            Question1();
+            Question1();            //call this function
         }
-        if (question2)
+        if (question2)              //if true....
         {
-            Question2();
+            Question2();            //call this function
         }
-        if (question3)
+        if (question3)              //if true.....
         {
-            Question3();
+            Question3();            //call this function
         }
-        if (question4)
+        if (question4)              //if true.....
         {
-            Question4();
+            Question4();            //call this function
         }
-        if (question5)
+        if (question5)              //if true....
         {
-            Question5();
+            Question5();            //call this function
         }
 
-        button1.onClick.AddListener(Button1Press);
-        button2.onClick.AddListener(Button2Press);
-        button3.onClick.AddListener(Button3Press);
-        button4.onClick.AddListener(Button4Press);
+        button1.onClick.AddListener(Button1Press);      //looks for button press, then calls function
+        button2.onClick.AddListener(Button2Press);      // ""
+        button3.onClick.AddListener(Button3Press);      // ""
+        button4.onClick.AddListener(Button4Press);      // ""
     }
 
     void Question1()
     {
-        surveyText.text = "What do you think about this?";
-        if (btn1Press)
+        surveyText.text = "What do you think about this?";      //sets text value
+        if (btn1Press)                                          //if this is true....
         {
-            question1 = false;
-            Q1Ans = 1;
-            btn1Press = false;
-            question2 = true;         
+            question1 = false;                  //sets bool to false
+            Q1Ans = 1;                          //sets integer value
+            btn1Press = false;                  //sets bool to false
+            question2 = true;                   //sets bool to true
         }
-        if (btn2Press)
+        if (btn2Press)                          //same as above 'if' statement for different bool
         {
-            question1 = false;
+            question1 = false;                  
             Q1Ans = 2;
             btn2Press = false;
             question2 = true;
         }
-        if (btn3Press)
+        if (btn3Press)                          //same as above 'if' statement for different bool
         {
             question1 = false;
             Q1Ans = 3;
             btn3Press = false;
             question2 = true;
         }
-        if (btn4Press)
+        if (btn4Press)                          //same as above 'if' statement for different bool
         {
             question1 = false;
             Q1Ans = 4;
@@ -80,7 +81,7 @@ public class SurveyController : MonoBehaviour
         }
     }
 
-    void Question2()
+    void Question2()                         //same as above function for different question/survey section
     {
         surveyText.text = "Are you sure?";
         if (btn1Press)
@@ -113,7 +114,7 @@ public class SurveyController : MonoBehaviour
         }
     }
 
-    void Question3()
+    void Question3()                         //same as above function for different question/survey section
     {
         surveyText.text = "Can you be more specific?";
         if (btn1Press)
@@ -146,7 +147,7 @@ public class SurveyController : MonoBehaviour
         }
     }
 
-    void Question4()
+    void Question4()                         //same as above function for different question/survey section
     {
         surveyText.text = "Can you be less specific";
         if (btn1Press)
@@ -179,7 +180,7 @@ public class SurveyController : MonoBehaviour
         }
     }
 
-    void Question5()
+    void Question5()                         //same as above function for different question/survey section
     {
         surveyText.text = "What is time?";
         if (btn1Press)
@@ -211,22 +212,22 @@ public class SurveyController : MonoBehaviour
         }
     }
 
-    void Button1Press()
+    void Button1Press()             //when this function is called....
     {
-        btn1Press = true;
+        btn1Press = true;           //set bool to true
     }
 
-    void Button2Press()
+    void Button2Press()             //same as above function 
     {
         btn2Press = true;
     }
 
-    void Button3Press()
+    void Button3Press()             //same as above function 
     {
         btn3Press = true;
     }
 
-    void Button4Press()
+    void Button4Press()             //same as above function 
     {
         btn4Press = true;
     }
