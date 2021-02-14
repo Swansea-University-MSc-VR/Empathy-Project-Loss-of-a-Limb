@@ -9,20 +9,31 @@ using UnityEngine;
 public class Turn : MonoBehaviour
 {
     public Rigidbody rb;
-    public float thrust = 1.0f;
-    public float torque = 10f;
+    public float thrust = 40f;
+    public float torque = 40f;
+    public float LinkHandVel;
+    public GameObject HandTrack;
+    
+  
     // Start is called before the first frame update
     void Start()
     {
+
+        
 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.AddTorque(transform.up * torque);
-        rb.AddForce(transform.forward * thrust);
+        rb.AddTorque(transform.up * torque * LinkHandVel);
+        rb.AddForce(transform.forward * thrust * LinkHandVel, ForceMode.Acceleration );
+        LinkHandVel = HandTrack.GetComponent<velocityTrack>().velocityClamp;
+
+
     }
+
+   
 }
 
 //rb.AddTorque(transform.up * torque * turnAmount);

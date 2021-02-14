@@ -589,7 +589,12 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
+<<<<<<< HEAD
   cloudServicesEnabled: {}
+=======
+  cloudServicesEnabled:
+    UNet: 1
+>>>>>>> de6f106313f534fbffb7da8c637bf4047395a20d
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
