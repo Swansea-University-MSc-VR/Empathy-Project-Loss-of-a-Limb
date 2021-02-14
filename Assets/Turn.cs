@@ -13,6 +13,11 @@ public class Turn : MonoBehaviour
     public float torque = 40f;
     public float LinkHandVel;
     public GameObject HandTrack;
+    public int counter = 0;
+    public GameObject Turner;
+    public GameObject TurnNested;
+    public int TorqueCount = 5;
+    public int ThrustCount = 50;
     
   
     // Start is called before the first frame update
@@ -26,10 +31,23 @@ public class Turn : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.AddTorque(transform.up * torque * LinkHandVel);
-        rb.AddForce(transform.forward * thrust * LinkHandVel, ForceMode.Acceleration );
+        //rb.AddTorque(transform.up * torque );
+        rb.AddForce(transform.forward * thrust, ForceMode.Acceleration );
         LinkHandVel = HandTrack.GetComponent<velocityTrack>().velocityClamp;
-
+        if (counter < TorqueCount)
+        {
+            rb.AddTorque(transform.up * torque);
+        }
+        if (counter >= ThrustCount)
+        {
+            counter = 0;
+            TurnNested.SetActive(false);
+            Turner.SetActive(false);
+        }
+        else
+        {
+            counter = counter + 1;
+        }
 
     }
 

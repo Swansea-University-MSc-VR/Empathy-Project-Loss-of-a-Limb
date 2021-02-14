@@ -7,7 +7,11 @@ public class ObjectActiveOnCollission : MonoBehaviour
 {
     
     public GameObject Turn;
+    public GameObject TurnNested;
     public InputActionReference XRIntMangr;
+    
+    
+
 
     private void OnEnable()
     {
@@ -25,40 +29,39 @@ public class ObjectActiveOnCollission : MonoBehaviour
         
     }
 
-   // void OnTriggerEnter(Collider other)
-   // {
-   //     Push.SetActive(true);
-   // }
+   
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Hand"  )
         {
-           if(XRIntMangr.action.triggered)
-            {
-                Turn.SetActive(true);
-            }
-            //Turn.SetActive(true);
+            //TurnNested.SetActive(false);
+            Turn.SetActive(true);
 
-            //Debug.Log("Collided");
+           
         }
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Hand")
+        if (TurnNested.gameObject.activeSelf)
         {
+
+            Debug.Log("Pushed");
             
+        }
+        else
+        {
             Turn.SetActive(false);
-            //Debug.Log("stopped Colliding");
-       }
+        }
    }
     // Update is called once per frame
    void Update()
     {
-        if(XRIntMangr.action.triggered)
+        
+        if (XRIntMangr.action.triggered && Turn.gameObject.activeInHierarchy)
         {
             Debug.Log("Triggered");
-            //Turn.SetActive(true);
+            TurnNested.SetActive(true);
         }
     }
 }
