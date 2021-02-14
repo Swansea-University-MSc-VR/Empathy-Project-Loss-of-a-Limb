@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 20
-  productGUID: c717b5c61753a9341924dd5ec90b4e66
+  productGUID: 9ef5195fcf72a8d43962e4faa922a3fc
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -269,12 +269,7 @@ PlayerSettings:
   m_BuildTargetGraphicsJobs: []
   m_BuildTargetGraphicsJobMode: []
   m_BuildTargetGraphicsAPIs: []
-  m_BuildTargetVRSettings:
-  - m_BuildTarget: Standalone
-    m_Enabled: 1
-    m_Devices:
-    - Oculus
-    - OpenVR
+  m_BuildTargetVRSettings: []
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
@@ -589,12 +584,7 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-<<<<<<< HEAD
   cloudServicesEnabled: {}
-=======
-  cloudServicesEnabled:
-    UNet: 1
->>>>>>> de6f106313f534fbffb7da8c637bf4047395a20d
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
