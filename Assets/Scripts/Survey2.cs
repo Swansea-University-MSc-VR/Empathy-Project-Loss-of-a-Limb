@@ -7,47 +7,46 @@ using UnityEngine.UI;
 public class Survey2 : MonoBehaviour
 {
     public SceneController control;
-    public Question currentQuestion;
-    public Question[] questions;
-    public int[] answers;
-    public int currentQuestionInt;
+    public Question currentQuestion2;
+    public Question[] questions2;
+    public int[] answers2;
+    public int currentQuestionInt2;
     public Text surveyText;
-    public bool surveyComplete;
+    public bool survey2Complete;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        currentQuestion = questions[0];
+        currentQuestion2 = questions2[0];
         loadQuestion();
     }
 
     public void NextQuestion()
     {
-        currentQuestionInt++;
+        currentQuestionInt2++;
 
-        if (currentQuestionInt < questions.Length)
+        if (currentQuestionInt2 < questions2.Length)
         {
-            surveyComplete = true;
-            currentQuestion = questions[currentQuestionInt];
+            currentQuestion2 = questions2[currentQuestionInt2];
             loadQuestion();
         }
         else
-        { 
+        {
+            survey2Complete = true;
             control.LaunchVideo2();
-            surveyComplete = true;
         }
     }
 
     void loadQuestion()
     {
-        surveyText.text = currentQuestion.surveyQuestion;
+        surveyText.text = currentQuestion2.surveyQuestion;
     }
 
     public void buttonPress(int answer)
     {
-        answers[currentQuestionInt] = answer;
+        answers2[currentQuestionInt2] = answer;
         NextQuestion();
     }
 }
