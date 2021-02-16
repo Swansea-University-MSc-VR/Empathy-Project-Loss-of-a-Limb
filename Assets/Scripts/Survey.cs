@@ -29,7 +29,6 @@ public class Survey : MonoBehaviour
 
         if (currentQuestionInt < questions.Length)
         {
-            surveyComplete = true;
             currentQuestion = questions[currentQuestionInt];
             loadQuestion();
         }
