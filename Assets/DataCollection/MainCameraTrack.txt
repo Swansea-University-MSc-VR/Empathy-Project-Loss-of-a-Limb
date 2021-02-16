@@ -1,0 +1,3 @@
+C:/Users/VR00023/AppData/LocalLow/DefaultCompany/Loss of a Limb/MainCameraTrack.json
+UnityEngine.Debug:Log(Object)
+Recorder:Update() (at Assets/Recorder.cs:34)
