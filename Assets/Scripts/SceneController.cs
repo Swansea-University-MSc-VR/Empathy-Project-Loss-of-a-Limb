@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public Survey2 survey2Finished;                                                 //reference to surveyController script
+    public Survey survey2Finished;                                                 //reference to surveyController script
 
     public GameObject wheelChair, environment, playerModel, video1Sphere, video2Sphere, survey1Canvas, survey2Canvas, welcomeCanvas, finishCanvas;      //creates refeences for gameobjects
     public VideoPlayer VRVideo1, VRVideo2;                                                  //creates references for video player
@@ -48,7 +48,7 @@ public class SceneController : MonoBehaviour
         {
             LaunchSurvey2();
         }
-        if(VRVideo2.isPlaying != true && survey2Finished.survey2Complete)
+        if(VRVideo2.isPlaying != true && survey2Finished.postSurveyComplete)
         {
             LaunchFinishCanvas();
         }

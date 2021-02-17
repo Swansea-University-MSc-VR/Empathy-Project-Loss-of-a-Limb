@@ -23,8 +23,12 @@ public class Survey : MonoBehaviour
         public string PROLIFIC_PID = "ID hasn't been set";
         public string STUDY_ID = "ID hasn't been set";
         public string SESSION_ID = "ID hasn't been set";
+        public string timePre;
+        public string timePost;
+
         public List<QAndA> preExperimentSurvey;
         public List<QAndA> postExperimentSurvey;
+        
 
     }
 
@@ -35,12 +39,13 @@ public class Survey : MonoBehaviour
     public int currentPreQuestionInt;
     public Text preSurveyText;
     public bool preSurveyComplete;
-
+    
     public QAndA currentPostQuestion;
     public int currentPostQuestionInt;
     public Text postSurveyText;
     public bool postSurveyComplete;
 
+    public string fileName; 
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +68,7 @@ public class Survey : MonoBehaviour
         }
         else
         {
+
             currentPostQuestion = surveyData.postExperimentSurvey[0];
             loadQuestionPre();
         }
@@ -80,6 +86,7 @@ public class Survey : MonoBehaviour
         }
         else
         {
+            surveyData.timePre = System.DateTime.Now.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat);
             save();
             control.LaunchVideo1();
             preSurveyComplete = true;
@@ -96,6 +103,7 @@ public class Survey : MonoBehaviour
         }
         else
         {
+            surveyData.timePost = System.DateTime.Now.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat);
             save();
             control.LaunchVideo2();
             postSurveyComplete = true;
@@ -105,6 +113,9 @@ public class Survey : MonoBehaviour
     {
        string debugjson = JsonUtility.ToJson(surveyData);
         Debug.Log(debugjson);
+        string path = Application.persistentDataPath + "/" + fileName + System.DateTime.Now.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat) + ".json";
+        System.IO.File.WriteAllText(path,debugjson);
+        Debug.Log(path);
     }
 
     void loadQuestionPre()
@@ -123,6 +134,6 @@ public class Survey : MonoBehaviour
     public void postButtonPress(int answer)
     {
         surveyData.postExperimentSurvey[currentPostQuestionInt].Answer = answer;
-        NextQuestionPre();
+        NextQuestionPost();
     }
 }

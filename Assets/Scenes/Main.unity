@@ -2719,7 +2719,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1015292998}
-        m_MethodName: buttonPress
+        m_MethodName: preButtonPress
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2888,7 +2888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cf614d77c4324242b761090bde6737a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  survey2Finished: {fileID: 1015292997}
+  survey2Finished: {fileID: 1015292998}
   wheelChair: {fileID: 739295351}
   environment: {fileID: 1896160835}
   playerModel: {fileID: 1101878876}
@@ -3425,8 +3425,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1015292997}
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1015292998}
+        m_MethodName: postButtonPress
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4909,8 +4909,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1015292997}
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1015292998}
+        m_MethodName: postButtonPress
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5039,8 +5039,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1015292997}
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1015292998}
+        m_MethodName: postButtonPress
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5360,7 +5360,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1015292998}
-        m_MethodName: buttonPress
+        m_MethodName: preButtonPress
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5490,7 +5490,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1015292998}
-        m_MethodName: buttonPress
+        m_MethodName: preButtonPress
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5549,7 +5549,7 @@ GameObject:
   - component: {fileID: 747026808}
   - component: {fileID: 747026807}
   m_Layer: 5
-  m_Name: SurveyQuestions
+  m_Name: PreSurveyQuestions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6517,7 +6517,7 @@ GameObject:
   - component: {fileID: 833223155}
   - component: {fileID: 833223154}
   m_Layer: 5
-  m_Name: Button
+  m_Name: DoesNotAgreeWithMeWell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6587,7 +6587,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1015292998}
-        m_MethodName: buttonPress
+        m_MethodName: preButtonPress
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7934,7 +7934,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1015292996}
   - component: {fileID: 1015292998}
-  - component: {fileID: 1015292997}
   m_Layer: 0
   m_Name: SurveyController
   m_TagString: Untagged
@@ -7956,32 +7955,6 @@ Transform:
   m_Father: {fileID: 1617773270}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1015292997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015292995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 301c673897185c2479fed2a7b98403f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: {fileID: 318737778}
-  currentQuestion2:
-    surveyQuestion: 
-  questions2:
-  - surveyQuestion: How well did you relate to the amputee in the VR 360 Video?
-  - surveyQuestion: 'How well did you relate to the amputee in the VR simulation? '
-  - surveyQuestion: How well did you understand the amputees challenges in the VR
-      360 Video?
-  - surveyQuestion: How well did you understand the amputees challenges in the VR
-      Simulation?
-  answers2: 00000000000000000000000000000000
-  currentQuestionInt2: 0
-  surveyText: {fileID: 1617635627}
-  survey2Complete: 0
 --- !u!114 &1015292998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7998,6 +7971,8 @@ MonoBehaviour:
     PROLIFIC_PID: ID hasn't been set
     STUDY_ID: ID hasn't been set
     SESSION_ID: ID hasn't been set
+    timePre: 
+    timePost: 
     preExperimentSurvey:
     - Question: 'Why am i here '
       Answer: 0
@@ -8009,12 +7984,19 @@ MonoBehaviour:
     - Question: 'heaven '
       Answer: 0
   control: {fileID: 318737778}
-  currentQuestion:
+  currentPreQuestion:
     Question: 
     Answer: 0
-  currentQuestionInt: 0
-  surveyText: {fileID: 747026807}
-  surveyComplete: 0
+  currentPreQuestionInt: 0
+  preSurveyText: {fileID: 747026807}
+  preSurveyComplete: 0
+  currentPostQuestion:
+    Question: 
+    Answer: 0
+  currentPostQuestionInt: 0
+  postSurveyText: {fileID: 1617635627}
+  postSurveyComplete: 0
+  fileName: 
 --- !u!1001 &1020830640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9757,8 +9739,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1015292997}
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1015292998}
+        m_MethodName: postButtonPress
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10271,7 +10253,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1015292998}
-        m_MethodName: buttonPress
+        m_MethodName: preButtonPress
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10979,7 +10961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1414185113}
   m_Layer: 0
-  m_Name: Survey2
+  m_Name: PostSurvey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12222,7 +12204,7 @@ GameObject:
   - component: {fileID: 1617635628}
   - component: {fileID: 1617635627}
   m_Layer: 5
-  m_Name: Text
+  m_Name: PostSurveyQuestions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12816,8 +12798,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1015292997}
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1015292998}
+        m_MethodName: postButtonPress
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15392,7 +15374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2030446168}
   m_Layer: 0
-  m_Name: Survey1
+  m_Name: PreSurvey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
