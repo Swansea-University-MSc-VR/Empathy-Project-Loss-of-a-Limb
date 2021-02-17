@@ -2905,6 +2905,7 @@ MonoBehaviour:
   environmentComplete: 0
   restart: 0
   close: 0
+  save: 0
   next: {fileID: 1641535841}
   replay: {fileID: 166895856}
   finish: {fileID: 1930292707}
@@ -5548,7 +5549,7 @@ GameObject:
   - component: {fileID: 747026808}
   - component: {fileID: 747026807}
   m_Layer: 5
-  m_Name: Text
+  m_Name: SurveyQuestions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7993,26 +7994,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383a55c8c5bba994cbfac13d4cc23067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  surveyData:
+    PROLIFIC_PID: ID hasn't been set
+    STUDY_ID: ID hasn't been set
+    SESSION_ID: ID hasn't been set
+    preExperimentSurvey:
+    - Question: 'Why am i here '
+      Answer: 0
+    - Question: 'Am i here '
+      Answer: 0
+    postExperimentSurvey:
+    - Question: Hell
+      Answer: 0
+    - Question: 'heaven '
+      Answer: 0
   control: {fileID: 318737778}
   currentQuestion:
-    surveyQuestion: 
-  questions:
-  - surveyQuestion: I daydream and fantasize, with some regularity, about things
-      that might happen to me.
-  - surveyQuestion: I often have tender, concerned feelings for people less fortunate
-      than me.
-  - surveyQuestion: I sometimes find it difficult to see things from the 'other guy's'
-      point of view.
-  - surveyQuestion: Sometimes I don't feel very sorry for other people when they
-      are having problems.
-  - surveyQuestion: I really get involved with the feelings of the characters in
-      a novel.
-  - surveyQuestion: In emergency situations, I feel apprehensive and ill-at-ease.
-  - surveyQuestion: I am usually objective when I watch a movie or play, and I don't
-      often get completely caught up in it.
-  - surveyQuestion: I try to look at everybody's side of a disagreement before I
-      make a decision.
-  answers: 0000000000000000000000000000000000000000000000000000000000000000
+    Question: 
+    Answer: 0
   currentQuestionInt: 0
   surveyText: {fileID: 747026807}
   surveyComplete: 0

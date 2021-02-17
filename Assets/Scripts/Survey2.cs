@@ -34,11 +34,17 @@ public class Survey2 : MonoBehaviour
         }
         else
         {
+            save();
             survey2Complete = true;
             control.LaunchVideo2();
         }
     }
 
+    void save()
+    {
+        string debugjson = JsonUtility.ToJson(answers2);
+        Debug.Log(debugjson);
+    }
     void loadQuestion()
     {
         surveyText.text = currentQuestion2.surveyQuestion;
