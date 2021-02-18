@@ -20,12 +20,11 @@ public class Recorder : MonoBehaviour
 
     public bool save;
     public bool saveOnce;
-    public string fileName = "TrackMainCamera"; 
+    public string fileName = "TrackMainCamera";
     void Start()
     {
         Track = new List<PointInTime>();
         saveOnce = false;
-
     }
 
     // Update is called once per frame
@@ -53,9 +52,9 @@ public class Recorder : MonoBehaviour
                 string debugTrack = JsonUtility.ToJson(variable);
                 Debug.Log(debugTrack);
                 string path = Application.persistentDataPath + "/" + fileName + System.DateTime.Now.ToString("yyyy''MM''dd'T'HH'mm'ss") + ".json";
-                System.IO.File.WriteAllText(Application.persistentDataPath + "/MainCameraTrack.json", debugTrack); 
+                System.IO.File.WriteAllText(Application.persistentDataPath + "/MainCameraTrack.json", debugTrack);
                 Debug.Log(Application.persistentDataPath + "/MainCameraTrack.json");
-                saveOnce = true; 
+                saveOnce = true;
             }
 
         }
@@ -63,9 +62,9 @@ public class Recorder : MonoBehaviour
         {
           var pointInTime = new PointInTime(Time.time, this.transform.position, this.transform.rotation);
           // string debugPointInTime = JsonUtility.ToJson(pointInTime);
-          // Debug.Log(debugPointInTime); 
+          // Debug.Log(debugPointInTime);
           Track.Add(pointInTime);
-            saveOnce = false; 
-        }  
+            saveOnce = false;
+        }
     }
 }
