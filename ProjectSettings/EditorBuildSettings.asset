@@ -18,5 +18,9 @@ EditorBuildSettings:
     path: Assets/Examples/TableQueryAndScanExample.unity
     guid: 9916fbc8cb11c694db70b3333d3de1f8
   m_configObjects:
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: f0c81f9d98696644db18b5a18a674f08,
+      type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 5c91f9fcd586d394b97ba136dc001bb7,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 93038707e5fb15347a921cd489eb9c5b,
       type: 2}

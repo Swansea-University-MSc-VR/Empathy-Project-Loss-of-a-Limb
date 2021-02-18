@@ -11,7 +11,7 @@ public class SceneController : MonoBehaviour
 
     public GameObject wheelChair, environment, playerModel, video1Sphere, video2Sphere, survey1Canvas, survey2Canvas, welcomeCanvas, finishCanvas;      //creates refeences for gameobjects
     public VideoPlayer VRVideo1, VRVideo2;                                                  //creates references for video player
-    public bool survey1Complete, survey2Complete, environmentComplete, restart, close, save;                                           //bools to control
+    public bool survey1Complete, survey2Complete, environmentComplete, restart, close;                                           //bools to control
     public Button next, replay, finish;
 
 
@@ -105,7 +105,6 @@ public class SceneController : MonoBehaviour
 
     void LaunchFinishCanvas()
     {
-        save = true;
         video2Sphere.SetActive(false);
         finishCanvas.SetActive(true);
     }
