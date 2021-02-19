@@ -66,8 +66,11 @@ public class Survey : MonoBehaviour
         public string PROLIFIC_PID = "ID hasn't been set";
         public string STUDY_ID = "ID hasn't been set";
         public string SESSION_ID = "ID hasn't been set";
-        public string timePre;
-        public string timePost;
+        public string timePreSurevyStart;
+        public string timePreSurveyFinish;
+        public string timePostSurevyStart;
+        public string timePostSurveyFinish;
+        
 
         public List<QAndA> preExperimentSurvey;
         public List<QAndA> postExperimentSurvey;
@@ -93,6 +96,9 @@ public class Survey : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UnityInitializer.AttachToGameObject(this.gameObject); // this starts AWS it has a terrible name! can only be one!
+        AWSConfigs.HttpClient = AWSConfigs.HttpClientOption.UnityWebRequest; // this use Http client useind the unity web requests
+
         // If there is no survey questions then Debug.Log error message, and then video 1 is launched 
         if (surveyData.preExperimentSurvey == null)
         {
@@ -118,6 +124,10 @@ public class Survey : MonoBehaviour
             currentPostQuestion = surveyData.postExperimentSurvey[0];
             loadQuestionPre();
         }
+
+        Debug.Log("starting Amazon dyanmo calls");
+
+
         Amazon.DynamoDBv2.DocumentModel.Table.LoadTableAsync(Client, dynamoTableName, (loadTableResult) =>
           {
               if (loadTableResult.Exception != null)
@@ -145,7 +155,7 @@ public class Survey : MonoBehaviour
         }
         else
         {
-            surveyData.timePre = System.DateTime.Now.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat);
+            surveyData.timePreSurveyFinish = System.DateTime.Now.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat);
            // save();
             control.LaunchVideo1();
             preSurveyComplete = true;
@@ -162,7 +172,7 @@ public class Survey : MonoBehaviour
         }
         else
         {
-            surveyData.timePost = System.DateTime.Now.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat);
+            surveyData.timePostSurveyFinish = System.DateTime.Now.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat);
             save();
             control.LaunchVideo2();
             postSurveyComplete = true;
