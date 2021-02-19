@@ -8,11 +8,14 @@ using Amazon;
 
 public class Survey : MonoBehaviour
 {
+    
+
     public string IdentityPoolId = "";
     public string CognitoPoolRegion = Amazon.RegionEndpoint.EUWest2.SystemName;
     public string DynamoRegion = Amazon.RegionEndpoint.EUWest2.SystemName;
     public string dynamoTableName = "EGM130A1Empathy";
     public static Amazon.DynamoDBv2.DocumentModel.Table dynamoTable; 
+
     private RegionEndpoint _CognitoPoolRegion
     {
         get { return RegionEndpoint.GetBySystemName(CognitoPoolRegion); }
@@ -150,12 +153,17 @@ public class Survey : MonoBehaviour
 
         if (currentPreQuestionInt < surveyData.preExperimentSurvey.Count) 
         {
-            currentPreQuestion = surveyData.preExperimentSurvey[currentPreQuestionInt];
+            currentPreQuestion = surveyData.preExperimentSurvey[currentPreQuestionInt];    
             loadQuestionPre();
+
+            surveyData.timePreSurevyStart = System.DateTime.Now.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat);
+            Debug.Log("Time stamp for pre survey start");
+
         }
         else
         {
             surveyData.timePreSurveyFinish = System.DateTime.Now.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat);
+            Debug.Log("Time stamp for pre survey finished");
            // save();
             control.LaunchVideo1();
             preSurveyComplete = true;
@@ -169,15 +177,21 @@ public class Survey : MonoBehaviour
         {
             currentPostQuestion = surveyData.postExperimentSurvey[currentPostQuestionInt];
             loadQuestionPost();
+
+            surveyData.timePostSurevyStart = System.DateTime.Now.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat);
+            Debug.Log("Time stamp for post survey start");
         }
         else
         {
             surveyData.timePostSurveyFinish = System.DateTime.Now.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat);
+            Debug.Log("Time stamp for post survey finish");
             save();
             control.LaunchVideo2();
             postSurveyComplete = true;
         }
     }
+   
+
     void save()
     {
         // creating a uniquie identifier 
