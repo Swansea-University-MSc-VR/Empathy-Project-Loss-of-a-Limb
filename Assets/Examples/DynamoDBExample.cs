@@ -35,7 +35,6 @@ namespace AWSSDK.Examples
             lowLevelButton.onClick.AddListener(LowLevelListener);
             midLevelScanButton.onClick.AddListener(MidLevelScanListener);
             highLevelobjectMapperButton.onClick.AddListener(HighLevelListener);
-            AWSConfigs.HttpClient = AWSConfigs.HttpClientOption.UnityWebRequest;
         }
 
         void LowLevelListener()
