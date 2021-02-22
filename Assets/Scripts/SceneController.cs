@@ -59,7 +59,7 @@ public class SceneController : MonoBehaviour
         }
         if (close)
         {
-            UnityEditor.EditorApplication.isPlaying = false;
+            //UnityEditor.EditorApplication.isPlaying = false;
             Application.Quit();
         }
 
