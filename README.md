@@ -17,7 +17,6 @@ For more insight regarding the application and its inspiration you can refer to 
 * Skybox 
 * Interactable Wheelchair
 * VRIK Rigging 
-*  
 
 ## YouTube Demonstartion Video 
 
