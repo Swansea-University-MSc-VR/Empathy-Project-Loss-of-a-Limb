@@ -6,7 +6,7 @@
 This application explores Virtual Reality 360 videos and Virtual Reality Simulation as tools for building  empathy, comparing which of the two  medium is more effective at Inducing empathy. The application combines the two aforementioned VR  medium to give a  virtual window in to the life of a double amputee, and the idea was inspired by [Purple Heart Homes]( https://www.youtube.com/watch?v=uPYU4Hh4-k4) .
  
 ## Website 
-For more insight regarding the application and its inspiration you can refer to the official webpage: 
+For more insight regarding the application and its inspiration you can refer to the official webpage: <br> 
 [Visit Empathy Experience Website](https://chambers11.github.io/Empathy-Project-Loss-of-a-Limb/)
 
 ## Features 
