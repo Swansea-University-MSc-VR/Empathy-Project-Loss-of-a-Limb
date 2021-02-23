@@ -31,7 +31,9 @@ Latest Version: 1.0- [Build Download](https://github.com/Chambers11/Empathy-Proj
 * Acer Mixed Reality Headset
 * NVIDIA GTX 1070 Version 456.38 
 * Intel-i7 7th Gen
-
+<br><br>
+[![DOI](https://zenodo.org/badge/335685926.svg)](https://zenodo.org/badge/latestdoi/335685926)
+<br>
 # Credits
 
 ### Sound Effects
