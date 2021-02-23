@@ -7,7 +7,6 @@ TagManager:
   - LeftHand
   - RightHand
   - Hand
-  - Button
   layers:
   - Default
   - TransparentFX
