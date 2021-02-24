@@ -11,7 +11,8 @@ For more insight regarding the application and its inspiration you can refer to 
 
 ## Empathy Theory
 This is a supplementary document outlining some of the theory around the application and it's methodology and design.  
- [PDF Document](file:///C:/Users/VR00023/Desktop/Word%20&%20PDF%20Documents/Empathy%20Project/Theory/EGM130_GroupAssignment_1_Report_%20Empathy%20Machines_LossOfALimb.pdf) 
+ [PDF Document](https://github.com/Chambers11/Empathy-Project-Loss-of-a-Limb/files/6034844/EGM130_GroupAssignment_1_Report_.Empathy.Machines_LossOfALimb.pdf)
+
 
 This README in github is intended for developers 
 
