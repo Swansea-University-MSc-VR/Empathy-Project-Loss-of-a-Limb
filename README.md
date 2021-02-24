@@ -7,14 +7,12 @@ This application explores Virtual Reality 360 videos and Virtual Reality Simulat
  
 ## Website 
 For more insight regarding the application and its inspiration you can refer to the official webpage: <br> 
-[Visit Empathy Experience Website](https://chambers11.github.io/Empathy-Project-Loss-of-a-Limb/)
+[Visit Empathy Experience Website](https://chambers11.github.io/Empathy-Project-Loss-of-a-Limb/) <br>
+This README in github is intended for developers 
 
 ## Empathy Theory
 This is a supplementary document outlining some of the theory around the application and it's methodology and design.  
  [PDF Document](https://github.com/Chambers11/Empathy-Project-Loss-of-a-Limb/files/6034844/EGM130_GroupAssignment_1_Report_.Empathy.Machines_LossOfALimb.pdf)
-
-
-This README in github is intended for developers 
 
 ## Features 
 * Locomotion: Wheelchair based
