@@ -8,6 +8,7 @@ This application explores Virtual Reality 360 videos and Virtual Reality Simulat
 ## Website 
 For more insight regarding the application and its inspiration you can refer to the official webpage: <br> 
 [Visit Empathy Experience Website](https://chambers11.github.io/Empathy-Project-Loss-of-a-Limb/) <br>
+
 This README in github is intended for developers 
 
 ## Empathy Theory
